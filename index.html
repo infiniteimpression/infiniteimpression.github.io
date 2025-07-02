@@ -1,112 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Infinite Impression is a full-service advertising agency specializing in printing, digital marketing, and social media strategy." />
-    <meta name="keywords" content="advertising, marketing, digital agency, printing, branding, social media" />
-    <meta name="author" content="Infinite Impression" />
-    <title>Infinite Impression | Creative Advertising & Marketing Agency</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGnyN9oKpjG5qzA1SKIMF6Vz8xj8A6A7ZjWcFChJUI/4m7giZK" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic&display=swap" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simpleLightbox.min.css" rel="stylesheet" integrity="sha512-FgRebSfaSHis3u14c3oG1loT/qMdWus70nYcOdckfg9nfuQ+SrqPO2HOJ6vUp8X3Y6fDzEKY6ryKk3JdbbR6Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
-  <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-      <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">Infinite Impression</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto my-2 my-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+<style>
+  .btn-social {
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .btn-facebook {
+    color: #3b5998;
+    border-color: #3b5998;
+  }
+
+  .btn-facebook:hover {
+    background-color: #3b5998;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    border: none;
+  }
+
+  .btn-instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-linkedin {
+    color: #0077b5;
+    border-color: #0077b5;
+  }
+
+  .btn-linkedin:hover {
+    background-color: #0077b5;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-twitter {
+    color: #1da1f2;
+    border-color: #1da1f2;
+  }
+
+  .btn-twitter:hover {
+    background-color: #1da1f2;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-whatsapp {
+    color: #25d366;
+    border-color: #25d366;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #25d366;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-outline-dark:not(.btn-facebook):not(.btn-instagram):not(.btn-linkedin):not(.btn-twitter):not(.btn-whatsapp):hover {
+    background-color: #0d6efd;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<!-- Portfolio Section -->
+<section class="page-section" id="portfolio">
+  <div class="container px-4 px-lg-5">
+    <h2 class="text-center mt-0">Our Work</h2>
+    <hr class="divider" />
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Campaign Design">
+          <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="Campaign Design" />
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">Advertising</div>
+            <div class="project-name">Campaign Design</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Event Branding">
+          <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="Event Branding" />
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">Branding</div>
+            <div class="project-name">Event Branding</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Print Media">
+          <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="Print Media" />
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">Printing</div>
+            <div class="project-name">Print Media</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="page-section bg-light" id="contact-info">
+  <div class="container px-4 px-lg-5">
+    <h2 class="text-center mt-0">Contact Information</h2>
+    <hr class="divider" />
+    <div class="row gx-4 gx-lg-5 text-center">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <i class="bi-phone fs-2 mb-3 text-primary"></i>
+        <div><strong>Phone:</strong><br />+92 300 1234567</div>
+      </div>
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <i class="bi-envelope fs-2 mb-3 text-primary"></i>
+        <div><strong>Email:</strong><br />info@infiniteimpression.com</div>
+      </div>
+      <div class="col-lg-4">
+        <i class="bi-geo-alt fs-2 mb-3 text-primary"></i>
+        <div><strong>Location:</strong><br />Lahore, Pakistan</div>
+      </div>
+    </div>
+
+    <div class="row gx-4 gx-lg-5 text-center mt-5">
+      <div class="col-lg-12">
+        <h4 class="mb-3">Follow Us</h4>
+        <a class="btn btn-facebook btn-social mx-1" href="https://facebook.com/infiniteimpression" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a class="btn btn-instagram btn-social mx-1" href="https://instagram.com/infiniteimpression" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a class="btn btn-linkedin btn-social mx-1" href="https://linkedin.com/company/infiniteimpression" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a class="btn btn-twitter btn-social mx-1" href="https://twitter.com/infiniteimp" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a class="btn btn-whatsapp btn-social mx-1" href="https://wa.me/923001234567" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="row gx-4 gx-lg-5 text-center mt-5">
+      <div class="col-lg-12">
+        <h4 class="mb-3">Find Us on the Map</h4>
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13610.558138101243!2d74.34408245!3d31.5203699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904dd15bb2b63%3A0x63a62a10f86d5823!2sLahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719820163551!5m2!1sen!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-    </nav>
-
-    <header class="masthead">
-      <div class="container px-4 px-lg-5 h-100">
-        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-          <div class="col-lg-8 align-self-end">
-            <h1 class="text-white font-weight-bold">Infinite Impression</h1>
-            <hr class="divider" />
-          </div>
-          <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 mb-5">Printing · Advertising · Social Media Marketing</p>
-            <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="page-section bg-primary" id="about">
-      <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="text-white mt-0">Creative Solutions, Lasting Impressions</h2>
-            <hr class="divider divider-light" />
-            <p class="text-white-75 mb-4">We provide cutting-edge advertising strategies, professional printing services, and social media campaigns to elevate your brand. Let us bring your ideas to life.</p>
-            <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section" id="services">
-      <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">Our Services</h2>
-        <hr class="divider" />
-        <div class="row gx-4 gx-lg-5">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-megaphone fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Advertising</h3>
-              <p class="text-muted mb-0">Tailored ad campaigns that engage and convert across all platforms.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-printer fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Printing</h3>
-              <p class="text-muted mb-0">High-quality printing solutions for flyers, brochures, banners and more.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-share fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Social Media</h3>
-              <p class="text-muted mb-0">Grow your online presence with impactful social media strategies.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-lightbulb fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Brand Strategy</h3>
-              <p class="text-muted mb-0">We craft unique brand identities that speak volumes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio, Contact, and Footer sections remain the same for now. Let me know if you'd like me to rewrite those too. -->
-
-    <footer class="bg-light py-5">
-      <div class="container px-4 px-lg-5">
-        <div class="small text-center text-muted">&copy; 2025 - Infinite Impression. All rights reserved.</div>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+4lVdMePqUjEjgXWZ36aOq+R9F8zh" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simpleLightbox.min.js" integrity="sha512-XLzRxUKA8h3+yfRrqRTMAElGjeMmoZ6F6nPf47P7XIlf/1wbjsXZ7tKL0W9fHIX5HQZcN7KX+pxT53ht09NMMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/scripts.js"></script>
-    <!-- Optional: Remove the SB Forms script if unused or use a fallback implementation -->
-    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
-  </body>
-</html>
+    </div>
+  </div>
+</section>
