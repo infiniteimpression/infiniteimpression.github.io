@@ -302,5 +302,31 @@
 
   setInterval(shuffleWord, 2500);
 </script>
+        <script>
+  const words = [
+    'Advertising',
+    'Branding',
+    'Storytelling',
+    'Engagement',
+    'Design',
+    'Innovation',
+    'Disruption',
+    'Impact'
+  ];
+
+  const highlight = document.getElementById('highlight-word');
+  let currentIndex = 0;
+
+  function shuffleWord() {
+    highlight.style.opacity = 0;
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % words.length;
+      highlight.textContent = words[currentIndex];
+      highlight.style.opacity = 1;
+    }, 500);
+  }
+
+  setInterval(shuffleWord, 2500);
+</script>
     </body>
 </html>
