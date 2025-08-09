@@ -44,8 +44,18 @@
     }
 <style>
   .fade-word {
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   display: inline-block;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
     </head>
@@ -303,46 +313,42 @@
   const highlight = document.getElementById('highlight-word');
   let currentIndex = 0;
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const words = [
-      'Advertising',
-      'Branding',
-      'Storytelling',
-      'Engagement',
-      'Design',
-      'Innovation',
-      'Disruption',
-      'Impact'
-    ];
+  document.addEventListener("DOMContentLoaded", function () {
+  const words = [
+    'Advertising',
+    'Branding',
+    'Storytelling',
+    'Engagement',
+    'Design',
+    'Innovation',
+    'Disruption',
+    'Impact'
+  ];
 
-    const highlight = document.getElementById('highlight-word');
-    let currentIndex = 0;
+  const highlight = document.getElementById('highlight-word');
+  let currentIndex = 0;
 
-    function shuffleWord() {
-      // fade out + slide up
-      highlight.style.opacity = 0;
-      highlight.style.transform = 'translateY(-10px)';
+  function shuffleWord() {
+    // Start fade-out animation
+    highlight.classList.remove('fade-in');
+    highlight.classList.add('fade-out');
 
-      // after fade out
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % words.length;
-        highlight.textContent = words[currentIndex];
+    // Wait for fade-out to finish before changing text
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % words.length;
+      highlight.textContent = words[currentIndex];
 
-        // prepare entry animation (slide from bottom)
-        highlight.style.transform = 'translateY(10px)';
-        highlight.style.opacity = 0;
+      // Switch to fade-in animation
+      highlight.classList.remove('fade-out');
+      highlight.classList.add('fade-in');
+    }, 800); // match CSS transition duration
+  }
 
-        // trigger fade in on next frame
-        requestAnimationFrame(() => {
-          highlight.style.opacity = 1;
-          highlight.style.transform = 'translateY(0)';
-        });
-      }, 500); // match CSS transition speed
-    }
+  // Initialize first state
+  highlight.classList.add('fade-in');
 
-    // start cycling after a short delay
-    setInterval(shuffleWord, 2500);
-  });
+  setInterval(shuffleWord, 2500);
+});
 </script>
 
 </body>
