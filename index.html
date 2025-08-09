@@ -303,31 +303,46 @@
   const highlight = document.getElementById('highlight-word');
   let currentIndex = 0;
 
+    document.addEventListener("DOMContentLoaded", function () {
+    const words = [
+      'Advertising',
+      'Branding',
+      'Storytelling',
+      'Engagement',
+      'Design',
+      'Innovation',
+      'Disruption',
+      'Impact'
+    ];
+
+    const highlight = document.getElementById('highlight-word');
+    let currentIndex = 0;
+
     function shuffleWord() {
-    // Fade out and move up
-    highlight.style.opacity = 0;
-    highlight.style.transform = 'translateY(-10px)';
+      // fade out + slide up
+      highlight.style.opacity = 0;
+      highlight.style.transform = 'translateY(-10px)';
 
-    setTimeout(() => {
-      // Change to next word
-      currentIndex = (currentIndex + 1) % words.length;
-      highlight.textContent = words[currentIndex];
+      // after fade out
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % words.length;
+        highlight.textContent = words[currentIndex];
 
-      // Move down and prepare for fade in
-      highlight.style.transform = 'translateY(10px)';
+        // prepare entry animation (slide from bottom)
+        highlight.style.transform = 'translateY(10px)';
+        highlight.style.opacity = 0;
 
-      // Small delay to let browser register change
-      requestAnimationFrame(() => {
+        // trigger fade in on next frame
         requestAnimationFrame(() => {
           highlight.style.opacity = 1;
           highlight.style.transform = 'translateY(0)';
         });
-      });
-    }, 400); // matches half of the CSS transition duration
-  }, 500);
-  }
+      }, 500); // match CSS transition speed
+    }
 
-  setInterval(shuffleWord, 2500);
+    // start cycling after a short delay
+    setInterval(shuffleWord, 2500);
+  });
 </script>
 
 </body>
