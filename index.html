@@ -304,20 +304,26 @@
   let currentIndex = 0;
 
     function shuffleWord() {
+    // Fade out and move up
     highlight.style.opacity = 0;
     highlight.style.transform = 'translateY(-10px)';
-    
+
     setTimeout(() => {
+      // Change to next word
       currentIndex = (currentIndex + 1) % words.length;
       highlight.textContent = words[currentIndex];
+
+      // Move down and prepare for fade in
       highlight.style.transform = 'translateY(10px)';
-      highlight.style.opacity = 0;
-      
+
+      // Small delay to let browser register change
       requestAnimationFrame(() => {
-        highlight.style.opacity = 1;
-        highlight.style.transform = 'translateY(0)';
+        requestAnimationFrame(() => {
+          highlight.style.opacity = 1;
+          highlight.style.transform = 'translateY(0)';
+        });
       });
-    }, 400);
+    }, 400); // matches half of the CSS transition duration
   }, 500);
   }
 
