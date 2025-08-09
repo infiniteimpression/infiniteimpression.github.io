@@ -329,24 +329,26 @@
   let currentIndex = 0;
 
   function shuffleWord() {
-    // Start fade-out animation
+    // Fade out
     highlight.classList.remove('fade-in');
     highlight.classList.add('fade-out');
 
-    // Wait for fade-out to finish before changing text
+    // Wait for fade-out to complete
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % words.length;
       highlight.textContent = words[currentIndex];
 
-      // Switch to fade-in animation
+      // Force browser reflow
+      void highlight.offsetWidth;
+
+      // Fade in
       highlight.classList.remove('fade-out');
       highlight.classList.add('fade-in');
-    }, 800); // match CSS transition duration
+    }, 800); // match CSS transition
   }
 
-  // Initialize first state
+  // Start first state
   highlight.classList.add('fade-in');
-
   setInterval(shuffleWord, 2500);
 });
 </script>
