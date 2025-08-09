@@ -44,8 +44,8 @@
     }
 <style>
   .fade-word {
-    transition: opacity 0.5s ease-in-out;
-    display: inline-block;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  display: inline-block;
 }
 </style>
     </head>
@@ -303,13 +303,22 @@
   const highlight = document.getElementById('highlight-word');
   let currentIndex = 0;
 
-  function shuffleWord() {
+    function shuffleWord() {
     highlight.style.opacity = 0;
+    highlight.style.transform = 'translateY(-10px)';
+    
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % words.length;
       highlight.textContent = words[currentIndex];
-      highlight.style.opacity = 1;
-    }, 500);
+      highlight.style.transform = 'translateY(10px)';
+      highlight.style.opacity = 0;
+      
+      requestAnimationFrame(() => {
+        highlight.style.opacity = 1;
+        highlight.style.transform = 'translateY(0)';
+      });
+    }, 400);
+  }, 500);
   }
 
   setInterval(shuffleWord, 2500);
